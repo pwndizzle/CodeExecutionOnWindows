@@ -5,6 +5,8 @@ Luckily Windows provides many built in tools to help you execute code while leav
 
 A list of ways to execute code, including examples, are shown below. Note that UAC bypasses and DLL hijacking will not be included as these are covered elsewhere.
 
+Also a much more comprehensive list can be found here - https://github.com/api0cradle/LOLBAS
+
 #### General tips:
 
 To remain hidden ideally you want to:
