@@ -64,6 +64,11 @@ https://github.com/hfiref0x/UACME
   - Example: mshta bad.hta
   - Example: mshta vbscript:Execute("MsgBox(""amessage"",64,""atitle"")(window.close)")
   - Example: mshta javascript:alert('test');
+  - Example HTA: \<html\><head><HTA:APPLICATION icon="#" WINDOWSTATE="minimize" SHOWINTASKBAR="no" SYSMENU="no"  CAPTION="no" /></head><script language="VBScript">  
+    Set objShell = CreateObject("Wscript.Shell")  
+    objShell.Run "calc.exe"  
+    Close  
+    </script>\</html\>
 
 - powershell.exe
   - Description: The most well known and most useful attacker utility. Powershell can be operated in console mode, with commands provided on the command line or through passing a ps1 file containing commands.
